@@ -1,0 +1,86 @@
+<br>
+<div class="partition justify-center style=flex inline-flex" style="padding: 2rem;">
+    <div class="card w-96 bg-base-100 shadow-xl " >
+            <img src="{{userDetails.avatar_url}}" alt=""  style="padding: 3rem;"/>
+            <div class="card-body">
+                <p><small class="text">Last Updated : {{userDetails.updated_at| date }} </small></p>
+                <p><small>Link: {{userDetails.html_url}}</small></p>
+            </div>
+    </div>
+    &emsp;
+    
+    <div class="card-body"  style="font-family: 'Times New Roman', Times, serif;">
+        <h2 class="card-title">{{userDetails.name}}</h2>
+         {{userDetails.login}}
+        <br>
+        {{userDetails.bio}}
+        <br>
+        {{userDetails.location}}
+        <br>
+        Twitter: https://twitter.com/{{userDetails.twitter_username}}
+        <br>
+        
+    </div>
+
+   
+   
+</div>
+
+<div class="card-title justify-center "*ngFor="let repo of repoDetails" >
+   
+
+
+
+     
+    <a style="width: 50rem;"
+  href="#"
+  class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+>
+  <span
+    class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+  ></span>
+
+  <div class="sm:flex sm:justify-between sm:gap-4">
+    <div>
+      <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+        <P>{{repo.name}}  
+            <br>
+           
+        </P>
+      </h3>
+
+      <p class="mt-1 text-xs font-medium text-gray-600"><a href="{{repo.html_url}}"> <button class="btn btn-primary">View this project on GitHub</button></a></p>
+    </div>
+
+    <div class="hidden sm:block sm:shrink-0">
+     
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <p class="text-pretty text-sm text-gray-500">
+      {{repo.description}}
+    </p>
+  </div>
+  
+
+  <dl class="mt-6 flex gap-4 sm:gap-6">
+    <div class="btn btn-primary flex flex-col-reverse">
+        <dt class="text-sm font-medium ">Created at</dt>
+        <dd class="text-xs ">{{repo.created_at | date}}</dd>
+      </div>
+    
+    <div class=" flex flex-col-reverse">
+      <dt class="text-sm font-medium ">Updated on</dt>
+      <dd class="text-xs ">{{repo.updated_at| date}}</dd>
+    </div>
+
+    
+  </dl>
+</a>
+
+
+</div>
+
+
+
